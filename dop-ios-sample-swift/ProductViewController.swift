@@ -9,6 +9,7 @@
 import UIKit
 
 class ProductViewController: UIViewController {
+    
     @IBOutlet var imgProductView: UIImageView!
     @IBOutlet var pickerCheckIn: UIDatePicker!
     @IBOutlet var pickerCheckOut: UIDatePicker!
@@ -39,5 +40,9 @@ class ProductViewController: UIViewController {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short
         return dateFormatter.string(from: from)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
     }
 }

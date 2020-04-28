@@ -253,6 +253,9 @@
                                 <rect key="frame" x="168" y="496" width="79" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="PURCHASE"/>
+                                <connections>
+                                    <segue destination="P5N-E7-rKm" kind="show" identifier="purchaseComplete" id="dGQ-R3-3cz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -263,6 +266,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9IT-oR-dcy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3414" y="112"/>
+        </scene>
+        <!--Purchase Complete View Controller-->
+        <scene sceneID="I1P-4D-4kx">
+            <objects>
+                <viewController id="P5N-E7-rKm" customClass="PurchaseCompleteViewController" customModule="dop_ios_sample_swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Grj-Rn-UVg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dkq-1N-zqI">
+                                <rect key="frame" x="163" y="530" width="89" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back to Main"/>
+                                <connections>
+                                    <action selector="btnBackToMain:" destination="P5N-E7-rKm" eventType="touchUpInside" id="NOS-DQ-9hu"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="pma-8H-cZB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="68o-rd-s9r"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="byc-LA-W1c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4193" y="111"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zkH-MM-6Lt">
