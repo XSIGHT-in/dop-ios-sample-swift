@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		145D33B62457C17F00E4B7AF /* PurchaseCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145D33B52457C17F00E4B7AF /* PurchaseCompleteViewController.swift */; };
+		145D33BB2457ED4B00E4B7AF /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145D33BA2457ED4B00E4B7AF /* City.swift */; };
+		145D33BD2457F22E00E4B7AF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145D33BC2457F22E00E4B7AF /* User.swift */; };
+		145D33BF2457F2EA00E4B7AF /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145D33BE2457F2EA00E4B7AF /* Product.swift */; };
+		145D33C12457FE3C00E4B7AF /* RequestToBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145D33C02457FE3C00E4B7AF /* RequestToBook.swift */; };
 		14756D1C2452AD500056AAAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14756D1B2452AD500056AAAB /* AppDelegate.swift */; };
 		14756D1E2452AD500056AAAB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14756D1D2452AD500056AAAB /* SceneDelegate.swift */; };
 		14756D202452AD500056AAAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14756D1F2452AD500056AAAB /* ViewController.swift */; };
@@ -26,6 +30,10 @@
 
 /* Begin PBXFileReference section */
 		145D33B52457C17F00E4B7AF /* PurchaseCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCompleteViewController.swift; sourceTree = "<group>"; };
+		145D33BA2457ED4B00E4B7AF /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		145D33BC2457F22E00E4B7AF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		145D33BE2457F2EA00E4B7AF /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		145D33C02457FE3C00E4B7AF /* RequestToBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestToBook.swift; sourceTree = "<group>"; };
 		14756D182452AD500056AAAB /* dop-ios-sample-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "dop-ios-sample-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		14756D1B2452AD500056AAAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14756D1D2452AD500056AAAB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +63,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		145D33B92457ED2400E4B7AF /* Preset */ = {
+			isa = PBXGroup;
+			children = (
+				145D33BA2457ED4B00E4B7AF /* City.swift */,
+				145D33BC2457F22E00E4B7AF /* User.swift */,
+				145D33BE2457F2EA00E4B7AF /* Product.swift */,
+				145D33C02457FE3C00E4B7AF /* RequestToBook.swift */,
+			);
+			path = Preset;
+			sourceTree = "<group>";
+		};
 		14756D0F2452AD500056AAAB = {
 			isa = PBXGroup;
 			children = (
@@ -74,6 +93,7 @@
 		14756D1A2452AD500056AAAB /* dop-ios-sample-swift */ = {
 			isa = PBXGroup;
 			children = (
+				145D33B92457ED2400E4B7AF /* Preset */,
 				14AC6CD22456D5B4000320F7 /* collection_1.jpg */,
 				14AC6CD32456D5B5000320F7 /* collection_2.jpg */,
 				14AC6CCA2456769A000320F7 /* prod_1.jpg */,
@@ -172,10 +192,14 @@
 			files = (
 				14AC6CD92456F3FB000320F7 /* RequestToBookViewController.swift in Sources */,
 				14756D202452AD500056AAAB /* ViewController.swift in Sources */,
+				145D33BB2457ED4B00E4B7AF /* City.swift in Sources */,
 				14756D1C2452AD500056AAAB /* AppDelegate.swift in Sources */,
 				14AC6CD12456C239000320F7 /* ProductViewController.swift in Sources */,
+				145D33BF2457F2EA00E4B7AF /* Product.swift in Sources */,
 				14756D1E2452AD500056AAAB /* SceneDelegate.swift in Sources */,
 				14AC6CD72456D680000320F7 /* CollectionViewController.swift in Sources */,
+				145D33C12457FE3C00E4B7AF /* RequestToBook.swift in Sources */,
+				145D33BD2457F22E00E4B7AF /* User.swift in Sources */,
 				145D33B62457C17F00E4B7AF /* PurchaseCompleteViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

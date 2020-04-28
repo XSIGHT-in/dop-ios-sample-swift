@@ -13,12 +13,14 @@ class CollectionViewController: UIViewController {
     @IBOutlet var lblCollectionName: UILabel!
     
     var txtTitle: String = "Collection Name"
+    var selectedCity:City!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = txtTitle
         lblCollectionName.text = txtTitle
+        NSLog("Selected Collection: %@", selectedCity.cityName)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -26,12 +28,11 @@ class CollectionViewController: UIViewController {
         if segue.identifier == "productFirst" {
             productViewController.imgProduct = UIImage(named: "prod_1.jpg")!
             productViewController.txtTitle = "Product #1"
-        } else if segue.identifier == "productSecond" {
+            productViewController.selectedProduct = Product.init(city: selectedCity, product: Product.Name.first)
+        } else {
             productViewController.imgProduct = UIImage(named: "prod_2.jpg")!
             productViewController.txtTitle = "Product #2"
-        } else {
-            productViewController.imgProduct = UIImage(named: "prod_3.jpg")!
-            productViewController.txtTitle = "Product #3"
+            productViewController.selectedProduct = Product.init(city: selectedCity, product: Product.Name.second)
         }
     }
 }

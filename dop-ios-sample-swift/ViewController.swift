@@ -73,8 +73,10 @@ class ViewController: UIViewController {
         let collectionViewController = segue.destination as! CollectionViewController
         if segue.identifier == "collectionParis" {
             collectionViewController.txtTitle = "Paris"
+            collectionViewController.selectedCity = City.init(name: City.Name.paris)
         } else {
             collectionViewController.txtTitle = "HCMc"
+            collectionViewController.selectedCity = City.init(name: City.Name.hcmc)
         }
     }
 }

@@ -16,6 +16,8 @@ class ProductViewController: UIViewController {
     @IBOutlet var txtCheckIn: UILabel!
     @IBOutlet var txtCheckOut: UILabel!
     
+    var selectedProduct:Product!
+    
     var imgProduct: UIImage = UIImage(named: "prod_3.jpg")!
     var txtTitle: String = "Product Name"
     
@@ -24,6 +26,7 @@ class ProductViewController: UIViewController {
 
         self.title = txtTitle
         imgProductView.image = imgProduct
+        NSLog("Selected Product: %@", selectedProduct.name)
     }
     
     @IBAction func checkInChanged(_ sender: UIDatePicker) {
@@ -42,6 +45,16 @@ class ProductViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let reqViewController = segue.destination as! RequestToBookViewController
+        if segue.identifier == "reqToBook" {
+            reqViewController.selectedReqToBook = RequestToBook.init(product: selectedProduct)
+        }
         
+    }
+    @IBAction func requestToBook(_ sender: UIButton) {
+        let roomNights:Int = Calendar.current.dateComponents([.day], from: pickerCheckIn.date, to: pickerCheckOut.date).day!
+        
+        NSLog("%d Room Nights", roomNights)
+        self.performSegue(withIdentifier: "reqToBook", sender: self)
     }
 }

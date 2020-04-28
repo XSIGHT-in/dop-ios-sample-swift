@@ -148,14 +148,6 @@
                                     <segue destination="6xb-xt-kOY" kind="show" identifier="productSecond" id="zhT-Uk-JT1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gG4-i6-fUH">
-                                <rect key="frame" x="20" y="412" width="374" height="122"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <state key="normal" backgroundImage="prod_3.jpg"/>
-                                <connections>
-                                    <segue destination="6xb-xt-kOY" kind="show" identifier="productThird" id="MZe-wr-7MQ"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="MWk-BX-aRx"/>
@@ -234,7 +226,7 @@
                                 <rect key="frame" x="150.66666666666666" y="822" width="112.99999999999997" height="30"/>
                                 <state key="normal" title="Request to Book"/>
                                 <connections>
-                                    <segue destination="2MF-ou-Hfb" kind="show" id="4SL-pT-9Lv"/>
+                                    <action selector="requestToBook:" destination="6xb-xt-kOY" eventType="touchUpInside" id="qYD-Dn-C19"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -252,6 +244,7 @@
                         <outlet property="pickerCheckOut" destination="zDq-pL-dQK" id="bPL-zH-kie"/>
                         <outlet property="txtCheckIn" destination="okS-AJ-UFT" id="KIH-Oj-YME"/>
                         <outlet property="txtCheckOut" destination="OxD-Ev-ojw" id="Lhg-Ys-MAu"/>
+                        <segue destination="2MF-ou-Hfb" kind="show" identifier="reqToBook" id="I4y-d1-5vh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FMf-nr-rPp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -273,18 +266,46 @@
                                     <segue destination="P5N-E7-rKm" kind="show" identifier="purchaseComplete" id="dGQ-R3-3cz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cce-AT-BC3">
-                                <rect key="frame" x="19.999999999999996" y="108" width="41.666666666666657" height="20.333333333333343"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4x-VG-K5w">
+                                <rect key="frame" x="0.0" y="88" width="414" height="514"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DL8-tY-zjX">
+                                        <rect key="frame" x="0.0" y="0.0" width="412" height="305"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cce-AT-BC3">
+                                                <rect key="frame" x="19.999999999999996" y="20" width="41.666666666666657" height="20.333333333333329"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Cce-AT-BC3" firstAttribute="leading" secondItem="DL8-tY-zjX" secondAttribute="leading" constant="20" id="CZH-0N-Zx4"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Cce-AT-BC3" secondAttribute="trailing" constant="20" symbolic="YES" id="afa-ta-kzx"/>
+                                            <constraint firstItem="Cce-AT-BC3" firstAttribute="top" secondItem="DL8-tY-zjX" secondAttribute="top" constant="20" id="kqY-GQ-u4O"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="DL8-tY-zjX" firstAttribute="height" secondItem="c4x-VG-K5w" secondAttribute="height" multiplier="0.593186" id="5Fe-Ii-Zh0"/>
+                                    <constraint firstAttribute="trailing" secondItem="DL8-tY-zjX" secondAttribute="trailing" constant="2" id="HNV-ea-ali"/>
+                                    <constraint firstAttribute="bottom" secondItem="DL8-tY-zjX" secondAttribute="bottom" constant="209" id="KQv-F9-IIF"/>
+                                    <constraint firstItem="DL8-tY-zjX" firstAttribute="width" secondItem="c4x-VG-K5w" secondAttribute="width" multiplier="0.698068" constant="123" id="OuE-nn-X47"/>
+                                    <constraint firstItem="DL8-tY-zjX" firstAttribute="leading" secondItem="c4x-VG-K5w" secondAttribute="leading" id="WYD-L5-aeC"/>
+                                    <constraint firstItem="DL8-tY-zjX" firstAttribute="top" secondItem="c4x-VG-K5w" secondAttribute="top" id="wHD-Uf-qYF"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="Mdb-7j-1x5"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="A59-ms-48V"/>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="OxY-BO-kpW" firstAttribute="centerX" secondItem="ndy-rg-yiK" secondAttribute="centerX" id="4oL-rK-316"/>
-                            <constraint firstItem="Cce-AT-BC3" firstAttribute="top" secondItem="vuP-Ha-fTN" secondAttribute="top" constant="20" id="FWu-U8-0fY"/>
-                            <constraint firstItem="Cce-AT-BC3" firstAttribute="leading" secondItem="vuP-Ha-fTN" secondAttribute="leading" constant="20" id="PMw-g6-SGV"/>
+                            <constraint firstItem="OxY-BO-kpW" firstAttribute="top" secondItem="c4x-VG-K5w" secondAttribute="bottom" constant="220" id="JpI-XE-Hbn"/>
+                            <constraint firstItem="c4x-VG-K5w" firstAttribute="leading" secondItem="vuP-Ha-fTN" secondAttribute="leading" id="PQM-jo-Btm"/>
+                            <constraint firstItem="c4x-VG-K5w" firstAttribute="top" secondItem="vuP-Ha-fTN" secondAttribute="top" id="Pkp-xc-BYK"/>
+                            <constraint firstItem="c4x-VG-K5w" firstAttribute="width" secondItem="ndy-rg-yiK" secondAttribute="width" id="ZdD-bW-ypZ"/>
                             <constraint firstItem="vuP-Ha-fTN" firstAttribute="bottom" secondItem="OxY-BO-kpW" secondAttribute="bottom" constant="10" id="b4k-8S-1Iy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vuP-Ha-fTN"/>
@@ -358,7 +379,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MZe-wr-7MQ"/>
+        <segue reference="m7w-m9-jbV"/>
         <segue reference="TXI-1p-YQP"/>
     </inferredMetricsTieBreakers>
     <resources>
@@ -366,6 +387,5 @@
         <image name="collection_2.jpg" width="3638" height="1915"/>
         <image name="prod_1.jpg" width="1920" height="1080"/>
         <image name="prod_2.jpg" width="1425" height="675"/>
-        <image name="prod_3.jpg" width="1920" height="1080"/>
     </resources>
 </document>
