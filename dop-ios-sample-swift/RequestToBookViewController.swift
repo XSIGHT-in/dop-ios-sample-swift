@@ -10,6 +10,8 @@ import UIKit
 
 class RequestToBookViewController: UIViewController {
     
+    @IBOutlet var lblRequestInfo: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -25,10 +25,13 @@ class CollectionViewController: UIViewController {
         let productViewController = segue.destination as! ProductViewController
         if segue.identifier == "productFirst" {
             productViewController.imgProduct = UIImage(named: "prod_1.jpg")!
+            productViewController.txtTitle = "Product #1"
         } else if segue.identifier == "productSecond" {
             productViewController.imgProduct = UIImage(named: "prod_2.jpg")!
+            productViewController.txtTitle = "Product #2"
         } else {
             productViewController.imgProduct = UIImage(named: "prod_3.jpg")!
+            productViewController.txtTitle = "Product #3"
         }
     }
 }

@@ -16,7 +16,6 @@ class ProductViewController: UIViewController {
     @IBOutlet var txtCheckIn: UILabel!
     @IBOutlet var txtCheckOut: UILabel!
     
-    
     var imgProduct: UIImage = UIImage(named: "prod_3.jpg")!
     var txtTitle: String = "Product Name"
     

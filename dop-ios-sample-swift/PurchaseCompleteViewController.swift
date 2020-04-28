@@ -10,6 +10,8 @@ import UIKit
 
 class PurchaseCompleteViewController: UIViewController {
 
+    @IBOutlet var lblPurchaseInfo: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
