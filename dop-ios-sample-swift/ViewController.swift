@@ -23,7 +23,22 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
+        /** XSIGHTin
+         * Set "Visit_Main_Page" event with "xi_is_host" properties
+         */
+        DOX.setEventGroupName("Visit_Main_Page")
+        DOX.logEvent(XEvent.builder({ (event) in
+            if let evt = event as? XEvent {
+                evt.setEventName("Visit_Main_Page")
+                evt.setProperties(XProperties.builder({ (property) in
+                    if let prop = property as? XProperties {
+                        prop.set("xi_is_host", value: self.user.isHost)
+                    }
+                }))
+            }
+        }))
+        
         // Check whether a user has loged in already
         if UserDefaults.standard.string(forKey: KEY_USER_ID) != nil {
             isLogedIn = true
@@ -39,6 +54,12 @@ class ViewController: UIViewController {
             displayLoginComponent(isLogedIn: isLogedIn)
             UserDefaults.standard.set(user.userId, forKey: KEY_USER_ID)
             UserDefaults.standard.set(txtUserEmail.text, forKey: KEY_EMAIL_ADDRESS)
+            
+            /** XSIGHTin
+             * LOGIN-ID value is stored in the local storage by the SDK
+             * and is transmitted together with the stored ID information when ALL subsequent events are transmitted.
+             */
+            DOX.setUserId(user.userId)
         }
     }
     
@@ -54,6 +75,11 @@ class ViewController: UIViewController {
                                                 self.displayLoginComponent(isLogedIn: self.isLogedIn)
                                                 UserDefaults.standard.removeObject(forKey: self.KEY_USER_ID)
                                                 UserDefaults.standard.removeObject(forKey: self.KEY_EMAIL_ADDRESS)
+                                                
+                                                /** XSIGHTin
+                                                 * Occurred LOG-OUT event
+                                                 */
+                                                DOX.setUserId("")
             })
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil)
             

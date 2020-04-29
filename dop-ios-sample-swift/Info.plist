@@ -58,5 +58,32 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <!-- for XSIGHTin in-app tracking SDK-->
+    <key>NSAppTransportSecurity</key>
+    <dict>
+    <key>NSAllowsArbitraryLoads</key>
+    <true/>
+    </dict>
+    <key>dotAuthorizationKey</key>
+    <dict>
+        <key>domain_x</key>
+        <string>https://api.xsight.in</string>
+        <key>useMode</key>
+        <integer>3</integer>
+        <key>accessToken</key>
+        <string>15274e1a-4719-11ea-bedb-0242ac10ee0b</string>
+        <key>expireDate</key>
+        <string>14</string>
+        <key>isDebug</key>
+        <true/>
+        <key>isFingerPrint</key>
+        <!-- False for Production-->
+        <true/>
+        <key>isInstallRetention</key>
+        <true/>
+        <key>serviceNumber</key>
+        <!-- Should ask to an operator of XSIGHTin-->
+        <string>300</string>
+    </dict>
 </dict>
 </plist>
