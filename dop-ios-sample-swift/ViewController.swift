@@ -60,6 +60,30 @@ class ViewController: UIViewController {
              * and is transmitted together with the stored ID information when ALL subsequent events are transmitted.
              */
             DOX.setUserId(user.userId)
+            
+            /** XSIGHTin
+             * Set "Sign_In " event with "xi_is_host" properties
+             */
+            let createDate = Calendar.current.date(byAdding: .day, value: -30, to: Date.init()) ?? Date.init() // Dummy as 30 days before
+            
+            DOX.setEventGroupName("Sign_In")
+            DOX.logEvent(XEvent.builder({ (event) in
+                if let evt = event as? XEvent {
+                    evt.setEventName("Sign_In")
+                    evt.setProperties(XProperties.builder({ (property) in
+                        if let prop = property as? XProperties {
+                            prop.set("xi_email", value: self.txtUserEmail.text ?? "")
+                            prop.set("xi_gender", value: "F")       // F or M
+                            prop.set("xi_timezone", value: "84")    // Country Phone Code
+                            prop.set("xi_fb_id", value: self.txtUserEmail.text ?? "")
+                            prop.set("xi_google_id", value: self.txtUserEmail.text ?? "")
+                            prop.set("xi_status", value: "Active")  // Active or Inactive
+                            prop.set("xi_created_at", value: createDate.timeIntervalSince1970)    // Unux Timestamp
+                            prop.set("xi_is_host", value: self.user.isHost)       // Guest or Host
+                        }
+                    }))
+                }
+            }))
         }
     }
     

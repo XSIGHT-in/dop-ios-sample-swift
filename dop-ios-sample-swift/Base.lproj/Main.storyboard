@@ -65,7 +65,7 @@
                                     <segue destination="Bcb-zQ-czS" kind="show" identifier="collectionHcmc" id="TXI-1p-YQP"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email@address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vlb-Vg-zry">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" text="test@sample.com" borderStyle="roundedRect" placeholder="email@address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vlb-Vg-zry">
                                 <rect key="frame" x="194" y="95" width="200" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="AiJ-9H-C1E"/>
