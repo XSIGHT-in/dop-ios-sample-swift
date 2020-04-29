@@ -11,34 +11,44 @@ import Foundation
 class RequestToBook {
     var product:Product
     
+    // for in-app tracking events
     var bookingId:String    // xi_booking_id: Ramdom Generated
     var dateBooking:Date    // xi_date_booking
     var dateCheckin:Date    // xi_date_checkin
     var dateCheckout:Date   // xi_date_checkout
     var numbOfGuest:Int         // xi_number_of_guest
-    
     var discountApply:String    // xi_discount_apply: True of False
     var actionRequestToBook:String // xi_request_to_book: Click / NA
+        
+    convenience init() {
+        let defaultProduct = Product.init(city: City.init(), product: Product.Name.first)
+        let dateBooking = Date.init()
+        let dateCheckin = Date.init()
+        let dateCheckout = Date.init()
+        
+        self.init(product: defaultProduct, numOfGuest: 1, dateBooking: dateBooking, dateCheckin: dateCheckin, dateCheckout: dateCheckout)
+    }
     
-    init() {
-        self.product = Product.init(city: City.init(), product: Product.Name.first)
+    init(product:Product, numOfGuest:Int, dateBooking:Date, dateCheckin:Date, dateCheckout:Date) {
+        self.product = product
+        self.dateBooking = dateBooking
+        self.dateCheckin = dateCheckin
+        self.dateCheckout = dateCheckout
+        self.numbOfGuest = numOfGuest
+        
         self.bookingId = "SAMPLEIDX"
-        self.dateBooking = Date.init()
-        self.dateCheckin = Date.init()
-        self.dateCheckout = Date.init()
-        self.numbOfGuest = 1
         self.discountApply = String(false)
         self.actionRequestToBook = "Click"
     }
     
-    convenience init(product:Product) {
-        self.init()
-        self.product = product
+    func calcRoomNights() -> Int {
+        return Calendar.current.dateComponents([.day], from: dateCheckin, to: dateCheckout).day!
     }
     
     // for xi_total_fee
     func calculateTotalFee() -> Float {
-        var roomNights = 1
+        let roomNights = calcRoomNights()
+        
         return product.unitFee * Float(roomNights) + product.cleaningFee + product.otherServiceFee
     }
 }

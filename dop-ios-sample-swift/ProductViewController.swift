@@ -17,6 +17,7 @@ class ProductViewController: UIViewController {
     @IBOutlet var txtCheckOut: UILabel!
     
     var selectedProduct:Product!
+    //var selectedRoomNights:Int = 0
     
     var imgProduct: UIImage = UIImage(named: "prod_3.jpg")!
     var txtTitle: String = "Product Name"
@@ -47,14 +48,29 @@ class ProductViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let reqViewController = segue.destination as! RequestToBookViewController
         if segue.identifier == "reqToBook" {
-            reqViewController.selectedReqToBook = RequestToBook.init(product: selectedProduct)
+            reqViewController.selectedReqToBook = RequestToBook.init(product: selectedProduct,
+                                                                     numOfGuest: 2,
+                                                                     dateBooking: Date.init(),  // Now
+                                                                     dateCheckin: pickerCheckIn.date,
+                                                                     dateCheckout: pickerCheckOut.date)
+        }
+    }
+    
+    @IBAction func requestToBook(_ sender: UIButton) {
+        let selectedRoomNights = Calendar.current.dateComponents([.day], from: pickerCheckIn.date, to: pickerCheckOut.date).day!
+        NSLog("%d Room Nights", selectedRoomNights)
+        
+        // Check-in date must be earlier than check-out date.
+        if selectedRoomNights <= 0 {
+            let warningAlert = UIAlertController(title: "Wooops",
+                                                 message: "Check-in date must be earlier than check-out date.",
+                                                 preferredStyle: UIAlertController.Style.alert)
+            let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil)
+            warningAlert.addAction(cancelAction)
+            present(warningAlert, animated: true, completion: nil)
+        } else {
+            self.performSegue(withIdentifier: "reqToBook", sender: self)
         }
         
-    }
-    @IBAction func requestToBook(_ sender: UIButton) {
-        let roomNights:Int = Calendar.current.dateComponents([.day], from: pickerCheckIn.date, to: pickerCheckOut.date).day!
-        
-        NSLog("%d Room Nights", roomNights)
-        self.performSegue(withIdentifier: "reqToBook", sender: self)
     }
 }
