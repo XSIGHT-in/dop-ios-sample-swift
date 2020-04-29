@@ -45,10 +45,15 @@ class RequestToBook {
         return Calendar.current.dateComponents([.day], from: dateCheckin, to: dateCheckout).day!
     }
     
-    // for xi_total_fee
-    func calculateTotalFee() -> Float {
+    // for xi_rent_fee
+    func calcRentFee() -> Float {
         let roomNights = calcRoomNights()
         
-        return product.unitFee * Float(roomNights) + product.cleaningFee + product.otherServiceFee
+        return product.unitFee * Float(roomNights)
+    }
+    
+    // for xi_total_fee
+    func calcTotalFee() -> Float {
+        return calcRentFee() + product.cleaningFee + product.otherServiceFee
     }
 }

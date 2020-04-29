@@ -15,9 +15,10 @@ class ViewController: UIViewController {
     @IBOutlet var txtUserEmail: UITextField!
     @IBOutlet var txtPassword: UITextField!
     
+    let user:User = User.init()
+    
     let KEY_USER_ID = "keyUserId"
     let KEY_EMAIL_ADDRESS = "emailAddress"
-    let PREDEFINED_USER_ID = "XS19H71n"    // It considered as User ID
     var isLogedIn: Bool!
     
     override func viewDidLoad() {
@@ -36,7 +37,7 @@ class ViewController: UIViewController {
         if isLogedIn == false {
             isLogedIn = true
             displayLoginComponent(isLogedIn: isLogedIn)
-            UserDefaults.standard.set(PREDEFINED_USER_ID, forKey: KEY_USER_ID)
+            UserDefaults.standard.set(user.userId, forKey: KEY_USER_ID)
             UserDefaults.standard.set(txtUserEmail.text, forKey: KEY_EMAIL_ADDRESS)
         }
     }
