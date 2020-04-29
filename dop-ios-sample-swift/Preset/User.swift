@@ -9,7 +9,7 @@
 import Foundation
 
 class User {
-    var isHost:String = "guest"
+    var isHost:String = "Guest"
     var userId:String = "XS19H71n"  // It considered as User ID
     
     init() {

@@ -19,6 +19,58 @@ class RequestToBookViewController: UIViewController {
 
         lblRequestInfo.numberOfLines = 0    // unlimited number of lines
         displayReqToBookInfo()
+        
+        /** XSIGHTin
+         * Set "Click_Request_to_Book" event with properties
+         */
+        DOX.setEventGroupName("Click_Request_to_Book")
+        DOX.logEvent(XEvent.builder({ (event) in
+            if let evt = event as? XEvent {
+                evt.setEventName("Click_Request_to_Book")
+                evt.setProperties(XProperties.builder({ (property) in
+                    if let prop = property as? XProperties {
+                        prop.set("xi_is_host", value: "Guest")  // This sample works as only Guest
+                        prop.set("xi_room_id", value: self.selectedReqToBook.product.roomId)
+                        prop.set("xi_host_id", value: self.selectedReqToBook.product.hostId)
+                        prop.set("xi_name", value: self.selectedReqToBook.product.name)
+                        prop.set("xi_search_id", value: self.selectedReqToBook.product.searchId)
+                        prop.set("xi_city_id", value: self.selectedReqToBook.product.cityInfo.cityId)
+                        prop.set("xi_city_nm", value: self.selectedReqToBook.product.cityInfo.cityName)
+                        prop.set("xi_type_of_accommodation", value: self.selectedReqToBook.product.typeOfAccommodation)
+                        prop.set("xi_room_type", value: self.selectedReqToBook.product.roomType)
+                        prop.set("xi_bedrooms", value: self.selectedReqToBook.product.numOfBedRooms)
+                        prop.set("xi_bathrooms", value: self.selectedReqToBook.product.numOfBethrooms)
+                        prop.set("xi_families", value: self.selectedReqToBook.product.families)
+                        prop.set("xi_kitchen_facillities", value: self.selectedReqToBook.product.kitchenFacillities)
+                        prop.set("xi_entertainment", value: self.selectedReqToBook.product.entertainment)
+                        prop.set("xi_room_facillities", value: self.selectedReqToBook.product.roomFacillities)
+                        prop.set("xi_facilities", value: self.selectedReqToBook.product.facilities)
+                        prop.set("xi_special_facilities", value: self.selectedReqToBook.product.specialFacilities)
+                        prop.set("xi_booking_type", value: self.selectedReqToBook.product.bookingType)
+                        prop.set("xi_cancel_policy", value: self.selectedReqToBook.product.cancelPolicy)
+//                        prop.set("xi_satus", value: self.selectedReqToBook.)
+                        prop.set("xi_discount_id", value: self.selectedReqToBook.product.discountId)
+                        prop.set("xi_discount_nm", value: self.selectedReqToBook.product.discountName)
+                        prop.set("xi_discount_percent", value: self.selectedReqToBook.product.discountPercent)
+                        prop.set("xi_roomrate_weekdays", value: self.selectedReqToBook.product.roomrate_weekdays)
+                        prop.set("xi_roomrate_weekend", value: self.selectedReqToBook.product.roomrate_weekend)
+                        prop.set("xi_number_of_review", value: self.selectedReqToBook.product.numbOfReview)
+                        prop.set("xi_review_rate", value: self.selectedReqToBook.product.reviewRate)
+                        prop.set("xi_booking_id", value: self.selectedReqToBook.bookingId)
+                        prop.set("xi_date_booking", value: self.selectedReqToBook.dateBooking.timeIntervalSince1970)
+                        prop.set("xi_date_checkin", value: self.selectedReqToBook.dateCheckin.timeIntervalSince1970)
+                        prop.set("xi_date_checkout", value: self.selectedReqToBook.dateCheckout.timeIntervalSince1970)
+                        prop.set("xi_number_of_guest", value: self.selectedReqToBook.numbOfGuest)
+                        prop.set("xi_rental_fee", value: self.selectedReqToBook.calcRentFee())
+                        prop.set("xi_cleaning_fee", value: self.selectedReqToBook.product.cleaningFee)
+                        prop.set("xi_other_service_fee", value: self.selectedReqToBook.product.otherServiceFee)
+                        prop.set("xi_discount_apply", value: self.selectedReqToBook.discountApply)
+                        prop.set("xi_total_fee", value: self.selectedReqToBook.calcTotalFee())
+                        prop.set("xi_request_to_book", value: self.selectedReqToBook.actionRequestToBook)
+                    }
+                }))
+            }
+        }))
     }
 
     func displayReqToBookInfo() {
@@ -62,9 +114,7 @@ class RequestToBookViewController: UIViewController {
         xi_roomrate_weekend: \(selectedReqToBook.product.roomrate_weekend)
         xi_number_of_review: \(selectedReqToBook.product.numbOfReview)
         xi_review_rate: \(selectedReqToBook.product.reviewRate)
-        
         """
-        
         lblRequestInfo.text = txtRequestInfo
     }
     

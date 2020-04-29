@@ -20,7 +20,27 @@ class CollectionViewController: UIViewController {
 
         self.title = txtTitle
         lblCollectionName.text = txtTitle
-        NSLog("Selected Collection: %@", selectedCity.cityName)
+        
+        /** XSIGHTin
+         * Set "View_Collection" event with properties
+         */
+        DOX.setEventGroupName("View_Collection")
+        DOX.logEvent(XEvent.builder({ (event) in
+            if let evt = event as? XEvent {
+                evt.setEventName("View_Collection")
+                evt.setProperties(XProperties.builder({ (property) in
+                    if let prop = property as? XProperties {
+                        prop.set("xi_is_host", value: "Guest")  // This sample works as only Guest
+                        prop.set("xi_city_id", value: self.selectedCity.cityId)
+                        prop.set("xi_city_nm", value: self.selectedCity.cityName)
+                        prop.set("xi_collection_id", value: self.selectedCity.collectionId)
+                        prop.set("xi_collection_nm", value: self.selectedCity.collectionName)
+                        prop.set("xi_theme_id", value: self.selectedCity.themeId)
+                        prop.set("xi_theme_nm", value: self.selectedCity.themeName)
+                    }
+                }))
+            }
+        }))
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
