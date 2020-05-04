@@ -263,6 +263,7 @@
                                 <rect key="frame" x="167.66666666666666" y="822" width="79" height="30"/>
                                 <state key="normal" title="PURCHASE"/>
                                 <connections>
+                                    <action selector="purchase:" destination="2MF-ou-Hfb" eventType="touchUpInside" id="OuZ-cr-DGt"/>
                                     <segue destination="P5N-E7-rKm" kind="show" identifier="purchaseComplete" id="dGQ-R3-3cz"/>
                                 </connections>
                             </button>

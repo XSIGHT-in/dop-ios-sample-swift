@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1421650224590CCA00B08599 /* DOX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1421650124590CCA00B08599 /* DOX.framework */; };
 		1421650324590CCA00B08599 /* DOX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1421650124590CCA00B08599 /* DOX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		14280ED824594E8100B07643 /* CheckOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14280ED724594E8100B07643 /* CheckOut.swift */; };
 		145D33B62457C17F00E4B7AF /* PurchaseCompleteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145D33B52457C17F00E4B7AF /* PurchaseCompleteViewController.swift */; };
 		145D33BB2457ED4B00E4B7AF /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145D33BA2457ED4B00E4B7AF /* City.swift */; };
 		145D33BD2457F22E00E4B7AF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145D33BC2457F22E00E4B7AF /* User.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		1421650124590CCA00B08599 /* DOX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = DOX.framework; sourceTree = "<group>"; };
 		1421650624591D0900B08599 /* dop-ios-sample-swift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "dop-ios-sample-swift-Bridging-Header.h"; sourceTree = "<group>"; };
+		14280ED724594E8100B07643 /* CheckOut.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckOut.swift; sourceTree = "<group>"; };
 		145D33B52457C17F00E4B7AF /* PurchaseCompleteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseCompleteViewController.swift; sourceTree = "<group>"; };
 		145D33BA2457ED4B00E4B7AF /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
 		145D33BC2457F22E00E4B7AF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				145D33BC2457F22E00E4B7AF /* User.swift */,
 				145D33BE2457F2EA00E4B7AF /* Product.swift */,
 				145D33C02457FE3C00E4B7AF /* RequestToBook.swift */,
+				14280ED724594E8100B07643 /* CheckOut.swift */,
 			);
 			path = Preset;
 			sourceTree = "<group>";
@@ -228,6 +231,7 @@
 				14AC6CD12456C239000320F7 /* ProductViewController.swift in Sources */,
 				145D33BF2457F2EA00E4B7AF /* Product.swift in Sources */,
 				14756D1E2452AD500056AAAB /* SceneDelegate.swift in Sources */,
+				14280ED824594E8100B07643 /* CheckOut.swift in Sources */,
 				14AC6CD72456D680000320F7 /* CollectionViewController.swift in Sources */,
 				145D33C12457FE3C00E4B7AF /* RequestToBook.swift in Sources */,
 				145D33BD2457F22E00E4B7AF /* User.swift in Sources */,

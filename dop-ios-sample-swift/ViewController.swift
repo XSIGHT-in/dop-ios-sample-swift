@@ -38,6 +38,8 @@ class ViewController: UIViewController {
                 }))
             }
         }))
+        /** END of code for XSIGHTin
+        */
         
         // Check whether a user has loged in already
         if UserDefaults.standard.string(forKey: KEY_USER_ID) != nil {
@@ -60,12 +62,14 @@ class ViewController: UIViewController {
              * and is transmitted together with the stored ID information when ALL subsequent events are transmitted.
              */
             DOX.setUserId(user.userId)
+            /** END of code for XSIGHTin
+            */
             
-            /** XSIGHTin
-             * Set "Sign_In " event with "xi_is_host" properties
-             */
             let createDate = Calendar.current.date(byAdding: .day, value: -30, to: Date.init()) ?? Date.init() // Dummy as 30 days before
             
+            /** XSIGHTin
+            * Set "Sign_In " event with "xi_is_host" properties
+            */
             DOX.setEventGroupName("Sign_In")
             DOX.logEvent(XEvent.builder({ (event) in
                 if let evt = event as? XEvent {
@@ -84,6 +88,8 @@ class ViewController: UIViewController {
                     }))
                 }
             }))
+            /** END of code for XSIGHTin
+            */
         }
     }
     
@@ -104,6 +110,8 @@ class ViewController: UIViewController {
                                                  * Occurred LOG-OUT event
                                                  */
                                                 DOX.setUserId("")
+                                                /** END of code for XSIGHTin
+                                                */
             })
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil)
             

@@ -41,6 +41,8 @@ class CollectionViewController: UIViewController {
                 }))
             }
         }))
+        /** END of code for XSIGHTin
+        */
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

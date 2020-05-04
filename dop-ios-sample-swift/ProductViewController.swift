@@ -17,7 +17,6 @@ class ProductViewController: UIViewController {
     @IBOutlet var txtCheckOut: UILabel!
     
     var selectedProduct:Product!
-    //var selectedRoomNights:Int = 0
     
     var imgProduct: UIImage = UIImage(named: "prod_3.jpg")!
     var txtTitle: String = "Product Name"
@@ -67,7 +66,8 @@ class ProductViewController: UIViewController {
                 }))
             }
         }))
-        
+        /** END of code for XSIGHTin
+        */
     }
     
     @IBAction func checkInChanged(_ sender: UIDatePicker) {

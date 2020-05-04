@@ -48,7 +48,6 @@ class RequestToBookViewController: UIViewController {
                         prop.set("xi_special_facilities", value: self.selectedReqToBook.product.specialFacilities)
                         prop.set("xi_booking_type", value: self.selectedReqToBook.product.bookingType)
                         prop.set("xi_cancel_policy", value: self.selectedReqToBook.product.cancelPolicy)
-//                        prop.set("xi_satus", value: self.selectedReqToBook.)
                         prop.set("xi_discount_id", value: self.selectedReqToBook.product.discountId)
                         prop.set("xi_discount_nm", value: self.selectedReqToBook.product.discountName)
                         prop.set("xi_discount_percent", value: self.selectedReqToBook.product.discountPercent)
@@ -71,6 +70,9 @@ class RequestToBookViewController: UIViewController {
                 }))
             }
         }))
+        /** END of code for XSIGHTin
+         */
+        
     }
 
     func displayReqToBookInfo() {
@@ -119,6 +121,16 @@ class RequestToBookViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        let purchaseViewController = segue.destination as! PurchaseCompleteViewController
+        if segue.identifier == "purchaseComplete" {
+            purchaseViewController.checkOutInfo = CheckOut.init(requestToBook: selectedReqToBook,
+                                                                paymentDate: Date.init(),
+                                                                paymentType: "International card",
+                                                                didClickThankyouPage: false)
+        }
+    }
+    
+    @IBAction func purchase(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "purchaseComplete", sender: self)
     }
 }
