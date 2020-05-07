@@ -68,8 +68,8 @@ class ViewController: UIViewController {
             let createDate = Calendar.current.date(byAdding: .day, value: -30, to: Date.init()) ?? Date.init() // Dummy as 30 days before
             
             /** XSIGHTin
-            * Set "Sign_In " event with "xi_is_host" properties
-            */
+             * Set "Sign_In " event with "xi_is_host" properties
+             */
             DOX.setEventGroupName("Sign_In")
             DOX.logEvent(XEvent.builder({ (event) in
                 if let evt = event as? XEvent {
@@ -89,16 +89,16 @@ class ViewController: UIViewController {
                 }
             }))
             /** END of code for XSIGHTin
-            */
+             */
         }
     }
     
-    @IBAction func logout(_ sender: UIButton) {
+    @IBAction func signout(_ sender: UIButton) {
         if isLogedIn {
-            let logoutAlert = UIAlertController(title: "Log Out",
-                                                message: "Are you sure to Log Out?",
+            let signOutAlert = UIAlertController(title: "Sign Out",
+                                                message: "Are you sure to Sign Out?",
                                                 preferredStyle: UIAlertController.Style.alert)
-            let logoutAction = UIAlertAction(title: "Log Out",
+            let signOutAction = UIAlertAction(title: "Sign Out",
                                              style: UIAlertAction.Style.default,
                                              handler: {ACTION in
                                                 self.isLogedIn = false
@@ -107,17 +107,28 @@ class ViewController: UIViewController {
                                                 UserDefaults.standard.removeObject(forKey: self.KEY_EMAIL_ADDRESS)
                                                 
                                                 /** XSIGHTin
-                                                 * Occurred LOG-OUT event
+                                                 * Occurred SIGN-OUT event
                                                  */
                                                 DOX.setUserId("")
+                                                DOX.setEventGroupName("Sign_Out")
+                                                DOX.logEvent(XEvent.builder({ (event) in
+                                                    if let evt = event as? XEvent {
+                                                        evt.setEventName("Sign_Out")
+                                                        evt.setProperties(XProperties.builder({ (property) in
+                                                            if let prop = property as? XProperties {
+                                                                prop.set("xi_is_host", value: self.user.isHost)       // Guest or Host
+                                                            }
+                                                        }))
+                                                    }
+                                                }))
                                                 /** END of code for XSIGHTin
                                                 */
             })
             let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil)
             
-            logoutAlert.addAction(cancelAction)
-            logoutAlert.addAction(logoutAction)
-            present(logoutAlert, animated: true, completion: nil)
+            signOutAlert.addAction(cancelAction)
+            signOutAlert.addAction(signOutAction)
+            present(signOutAlert, animated: true, completion: nil)
         }
     }
     
