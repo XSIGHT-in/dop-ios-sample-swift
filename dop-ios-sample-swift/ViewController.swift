@@ -88,6 +88,21 @@ class ViewController: UIViewController {
                     }))
                 }
             }))
+            
+            DOX.setEventGroupName("Sign_In")
+            DOX.userIdentify(XIdentify.builder({ (identify) in
+                if let iden = identify as? XIdentify {
+                    iden.setOnce("user_id", value: self.user.userId)
+                    iden.set("xi_email", value: self.txtUserEmail.text ?? "")
+                    iden.set("xi_gender", value: "F")
+                    iden.set("xi_timezone", value: "84")
+                    iden.set("xi_fb_id", value: self.txtUserEmail.text ?? "")
+                    iden.set("xi_google_id", value: self.txtUserEmail.text ?? "")
+                    iden.set("xi_status", value: "Active")  // Active or Inactive
+                    iden.set("xi_created_at", value: createDate.timeIntervalSince1970)    // Unux Timestamp
+                    iden.set("xi_is_host", value: self.user.isHost)       // Guest or Host
+                }
+            }))
             /** END of code for XSIGHTin
              */
         }

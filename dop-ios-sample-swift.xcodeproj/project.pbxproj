@@ -29,6 +29,7 @@
 		14AC6CD52456D5B5000320F7 /* collection_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14AC6CD32456D5B5000320F7 /* collection_2.jpg */; };
 		14AC6CD72456D680000320F7 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AC6CD62456D680000320F7 /* CollectionViewController.swift */; };
 		14AC6CD92456F3FB000320F7 /* RequestToBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AC6CD82456F3FB000320F7 /* RequestToBookViewController.swift */; };
+		14FC08832464CF0D00B111C0 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 14FC08822464CF0D00B111C0 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,6 +71,7 @@
 		14AC6CD32456D5B5000320F7 /* collection_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = collection_2.jpg; sourceTree = "<group>"; };
 		14AC6CD62456D680000320F7 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		14AC6CD82456F3FB000320F7 /* RequestToBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestToBookViewController.swift; sourceTree = "<group>"; };
+		14FC08822464CF0D00B111C0 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		14756D0F2452AD500056AAAB = {
 			isa = PBXGroup;
 			children = (
+				14FC08822464CF0D00B111C0 /* README.md */,
 				14756D1A2452AD500056AAAB /* dop-ios-sample-swift */,
 				14756D192452AD500056AAAB /* Products */,
 				1421650024590CCA00B08599 /* Frameworks */,
@@ -212,6 +215,7 @@
 				14AC6CCE2456769A000320F7 /* prod_2.jpg in Resources */,
 				14AC6CD52456D5B5000320F7 /* collection_2.jpg in Resources */,
 				14AC6CCD2456769A000320F7 /* prod_1.jpg in Resources */,
+				14FC08832464CF0D00B111C0 /* README.md in Resources */,
 				14AC6CCF2456769A000320F7 /* prod_3.jpg in Resources */,
 				14756D232452AD500056AAAB /* Main.storyboard in Resources */,
 			);

@@ -17,8 +17,8 @@ class RequestToBook {
     var dateCheckin:Date    // xi_date_checkin
     var dateCheckout:Date   // xi_date_checkout
     var numbOfGuest:Int         // xi_number_of_guest
-    var discountApply:String    // xi_discount_apply: True of False
-    var actionRequestToBook:String // xi_request_to_book: Click / NA
+    var discountApply:String    // xi_discount_apply: True or False
+    var actionRequestToBook:String // xi_request_to_book: Click | NA
         
     convenience init() {
         let defaultProduct = Product.init(city: City.init(), product: Product.Name.first)
