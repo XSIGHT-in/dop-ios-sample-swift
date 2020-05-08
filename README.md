@@ -115,7 +115,7 @@ DOX.userIdentify(XIdentify.builder({ (identify) in
 ```
 
 ### Sign-out
-> See ViewVontroller.swift
+> See ViewController.swift
 
 ```swift
 DOX.setUserId("")
@@ -136,7 +136,7 @@ DOX.logEvent(XEvent.builder({ (event) in
 ```
 
 ## Visit_Main_Page
-> See ViewVontroller.swift
+> See ViewController.swift
 
 ```swift
 DOX.setEventGroupName("Visit_Main_Page")
