@@ -2,7 +2,47 @@
 
 ## SDK V2 Installation
 
+### Download SDK v2.0
+**ATTENTION: From version 2.0, use "DOX.framework" only.**
+
 Download SDK v2.0 file via [this link](https://dev.azure.com/XSIGHTin/XSIGHT.in%20developer%20guide/_wiki/wikis/XSIGHT.in-developer-guide.wiki/515/iOS-Implementation-version-2.0.0).
+
+### Key
+Add the App Analytics Key information provided in the info.plist file of the XCode project. When you open info.plist file, open it as 'Source Code' instead of 'Property list' and then press Ctrl + C/V to get the key you provided.
+The key value provided is data having xml form as shown in the example below.
+```xml
+<key>dotAuthorizationKey</key>
+<dict>
+    <key>domain_x</key>
+    <string>https://api.xsight.in</string>
+    <key>useMode</key>
+    <integer>3</integer>
+    <key>accessToken</key>
+    <string>ADD YOUR ACCESS TOKEN</string>
+    <key>expireDate</key>
+    <string>14</string>
+    <key>isDebug</key>
+    <true/>
+    <key>isFingerPrint</key>
+    <!-- False for Production-->
+    <true/>
+    <key>isInstallRetention</key>
+    <true/>
+    <key>serviceNumber</key>
+    <!-- Should ask to an operator of XSIGHTin-->
+    <string>301</string>
+</dict>
+```
+
+To allow http communication, add NSAppTransportSecurity as follows.
+```xml
+<key>NSAppTransportSecurity</key>
+<dict>
+<key>NSAllowsArbitraryLoads</key>
+<true/>
+</dict>
+```
+
 
 ## Initialization
 
@@ -273,8 +313,11 @@ DOX.logEvent(XEvent.builder({ (event) in
 ```
 
 ## Check_Out
-**ATTENTION: this should be called by logRevenue() NOT logEvent()**
 > See PurchaseCompleteViewController.swift
+
+**ATTENTION: this should be called by logRevenue() NOT logEvent()**
+
+The logRevenue() is used when you want to send a purchase event that occurs on a app and it has the following usage relationship.
 
 ```swift
 DOX.setEventGroupName("Check_Out")
