@@ -71,7 +71,7 @@
         <key>useMode</key>
         <integer>3</integer>
         <key>accessToken</key>
-        <string>1525fe0c-4719-11ea-bedb-0242ac10ee0b</string>
+        <string>ADD YOUR ACCESS TOKEN</string>
         <key>expireDate</key>
         <string>14</string>
         <key>isDebug</key>
@@ -83,7 +83,7 @@
         <true/>
         <key>serviceNumber</key>
         <!-- Should ask to an operator of XSIGHTin-->
-        <string>300</string>
+        <string>301</string>
     </dict>
 </dict>
 </plist>
