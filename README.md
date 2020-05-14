@@ -5,7 +5,12 @@
 ### Download SDK v2.0
 **ATTENTION: From version 2.0, use "DOX.framework" only.**
 
-Download SDK v2.0 file via [this link](https://dev.azure.com/XSIGHTin/XSIGHT.in%20developer%20guide/_wiki/wikis/XSIGHT.in-developer-guide.wiki/515/iOS-Implementation-version-2.0.0).
+Download SDK v2.0 file via [this link](./readme/DOX.framework_2.0.1.zip).
+
+Unzip the file and add them to Frameworks, Libraries and Embedded Content Section
+TARGETS -> General -> Frameworks, Libraries, and Embedded Content
+
+![description](./readme/description_1.png)
 
 ### Key
 Add the App Analytics Key information provided in the info.plist file of the XCode project. When you open info.plist file, open it as 'Source Code' instead of 'Property list' and then press Ctrl + C/V to get the key you provided.
